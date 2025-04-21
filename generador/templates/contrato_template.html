@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: 'Georgia', serif; font-size: 14px; line-height: 1.6; margin: 40px; }
+    h1, h2 { text-align: center; }
+    p { text-align: justify; }
+    .clausula { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>CONTRATO DE ARRENDAMIENTO DE INMUEBLE</h1>
+  <h2>INMOBILIARIA VISTA URBANA S.A. DE C.V.</h2>
+
+  <p>En la ciudad de Guadalajara, Jalisco, a la fecha {{ contrato.fecha_inicio }}, comparecen por una parte la empresa denominada <strong>INMOBILIARIA VISTA URBANA S.A. DE C.V.</strong>, representada en este acto por su apoderado legal, en adelante denominada "LA ARRENDADORA"; y por la otra parte, el C. <strong>{{ contrato.nombre }}</strong>, en lo sucesivo "EL ARRENDATARIO"; quienes celebran el presente contrato de arrendamiento al tenor de las siguientes cláusulas:</p>
+
+  <div class="clausula">
+    <strong>PRIMERA. OBJETO DEL CONTRATO:</strong>
+    <p>"LA ARRENDADORA" da en arrendamiento a "EL ARRENDATARIO" el inmueble ubicado en Calle Ficticia #1234, Colonia Jardines de Occidente, Guadalajara, Jalisco, el cual consta de sala, comedor, cocina integral, dos recámaras, un baño completo y patio de servicio.</p>
+  </div>
+
+  <div class="clausula">
+    <strong>SEGUNDA. DURACIÓN DEL CONTRATO:</strong>
+    <p>El presente contrato tendrá una duración de 12 (doce) meses contados a partir del día {{ contrato.fecha_inicio }}, con vencimiento automático el {{ contrato.fecha_fin }}, salvo acuerdo de renovación expresa entre ambas partes.</p>
+  </div>
+
+  <div class="clausula">
+    <strong>TERCERA. RENTA:</strong>
+    <p>"EL ARRENDATARIO" pagará una renta mensual de $9,500.00 (NUEVE MIL QUINIENTOS PESOS 00/100 M.N.), a más tardar el día 5 de cada mes, mediante transferencia bancaria a la cuenta proporcionada por "LA ARRENDADORA".</p>
+  </div>
+
+  <div class="clausula">
+    <strong>CUARTA. DEPÓSITO EN GARANTÍA:</strong>
+    <p>El arrendatario entregará un depósito por el mismo monto de la renta como garantía por daños o incumplimiento del contrato.</p>
+  </div>
+
+  <div class="clausula">
+    <strong>QUINTA. USO DEL INMUEBLE:</strong>
+    <p>El inmueble será destinado exclusivamente a uso habitacional. Se prohíbe el subarrendamiento, modificación estructural o cambio de uso sin autorización escrita.</p>
+  </div>
+
+  <div class="clausula">
+    <strong>SEXTA. OBLIGACIONES DEL ARRENDATARIO:</strong>
+    <ul>
+      <li>Mantener el inmueble en buen estado.</li>
+      <li>Permitir inspecciones razonables con previo aviso.</li>
+      <li>No generar molestias a vecinos ni actividades ilícitas.</li>
+      <li>Notificar daños o reparaciones necesarias de inmediato.</li>
+    </ul>
+  </div>
+
+  <div class="clausula">
+    <strong>SÉPTIMA. AVAL:</strong>
+    <p>{{ contrato.requiere_aval|yesno:"El arrendatario se compromete a presentar un aval domiciliado en Guadalajara,No se requiere aval para este contrato." }}</p>
+  </div>
+
+  <div class="clausula">
+    <strong>OCTAVA. CUOTA DE MANTENIMIENTO:</strong>
+    <p>{{ contrato.cuota_mantenimiento|yesno:"El arrendatario se compromete a cubrir la cuota mensual de mantenimiento establecida por la administración del condominio,No aplica cuota de mantenimiento para esta propiedad." }}</p>
+  </div>
+
+  <div class="clausula">
+    <strong>NOVENA. RESCISIÓN ANTICIPADA:</strong>
+    <p>En caso de incumplimiento, cualquiera de las partes podrá dar por terminado el contrato sin responsabilidad, previa notificación por escrito con al menos 30 días naturales de anticipación.</p>
+  </div>
+
+  <div class="clausula">
+    <strong>DÉCIMA. JURISDICCIÓN:</strong>
+    <p>Para la interpretación y cumplimiento del presente contrato, las partes se someten a las leyes y tribunales competentes de la ciudad de Guadalajara, Jalisco, renunciando expresamente a cualquier otro fuero.</p>
+  </div>
+
+  <p>Leído que fue el presente contrato, las partes lo firman de conformidad, por duplicado, en Guadalajara, Jalisco.</p>
+
+  <br><br>
+
+  <p>______________________________<br>LA ARRENDADORA<br>INMOBILIARIA VISTA URBANA</p>
+
+  <p>______________________________<br>EL ARRENDATARIO<br>{{ contrato.nombre }}</p>
+</body>
+</html>
