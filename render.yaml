@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: contratos-app
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn contrato_auto.wsgi:application"
+    envVars:
+      - key: RENDER
+        value: True
+    autoDeploy: true

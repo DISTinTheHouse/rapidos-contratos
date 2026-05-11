@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cotización - SIN MESERO</title>
+
+<style>
+
+@page{
+  size:A4;
+  margin:38px;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-family:Helvetica, Arial, sans-serif;
+  background:#ffffff;
+  color:#111111;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.container{
+  width:100%;
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.topbar{
+  width:100%;
+  border-bottom:1px solid #e5e7eb;
+  padding-bottom:24px;
+  margin-bottom:34px;
+}
+
+.topbar-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.topbar-left{
+  width:65%;
+  vertical-align:top;
+}
+
+.topbar-right{
+  width:35%;
+  vertical-align:top;
+  text-align:right;
+}
+
+.brand{
+  font-size:34px;
+  font-weight:700;
+  letter-spacing:-2px;
+  margin-bottom:4px;
+}
+
+.brand-accent{
+  color:#ff6b00;
+}
+
+.brand-subtitle{
+  color:#6b7280;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+
+.quote-title{
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#ff6b00;
+  margin-bottom:18px;
+}
+
+.meta-table{
+  margin-left:auto;
+  border-collapse:collapse;
+}
+
+.meta-table td{
+  padding:4px 0 4px 18px;
+  font-size:12px;
+}
+
+.meta-label{
+  color:#9ca3af;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:10px;
+}
+
+.meta-value{
+  color:#111111;
+  font-weight:600;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+  margin-bottom:34px;
+}
+
+.section-title{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#ff6b00;
+  font-weight:700;
+  margin-bottom:14px;
+}
+
+.paragraph{
+  color:#4b5563;
+  line-height:1.7;
+}
+
+/* =========================
+   CLIENT
+========================= */
+
+.client-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.client-table td{
+  width:50%;
+  padding:0 20px 12px 0;
+  vertical-align:top;
+}
+
+.label{
+  color:#9ca3af;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:5px;
+}
+
+.value{
+  font-size:14px;
+  color:#111111;
+  border-bottom:1px solid #f3f4f6;
+  padding-bottom:8px;
+}
+
+/* =========================
+   PRODUCT TABLE
+========================= */
+
+.product-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:16px;
+}
+
+.product-table th{
+  text-align:left;
+  padding:14px 0;
+  border-bottom:1px solid #e5e7eb;
+  color:#9ca3af;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.product-table td{
+  padding:18px 0;
+  border-bottom:1px solid #f3f4f6;
+  vertical-align:top;
+}
+
+.product-name{
+  font-weight:600;
+  color:#111111;
+  margin-bottom:4px;
+}
+
+.product-description{
+  color:#6b7280;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.text-right{
+  text-align:right;
+}
+
+/* =========================
+   TOTALS
+========================= */
+
+.totals{
+  width:320px;
+  margin-left:auto;
+  margin-top:26px;
+  border-collapse:collapse;
+}
+
+.totals td{
+  padding:10px 0;
+  border-bottom:1px solid #f3f4f6;
+}
+
+.total-label{
+  color:#6b7280;
+}
+
+.total-value{
+  text-align:right;
+  font-weight:600;
+}
+
+.grand-total td{
+  border-bottom:none;
+  padding-top:18px;
+}
+
+.grand-total .total-label{
+  color:#111111;
+  font-size:15px;
+  font-weight:700;
+}
+
+.grand-total .total-value{
+  color:#ff6b00;
+  font-size:22px;
+  font-weight:700;
+}
+
+/* =========================
+   CONDITIONS
+========================= */
+
+.conditions{
+  margin-top:46px;
+  border-top:1px solid #e5e7eb;
+  padding-top:26px;
+}
+
+.conditions-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.conditions-table td{
+  width:50%;
+  padding:0 30px 18px 0;
+  vertical-align:top;
+}
+
+.condition-title{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#111111;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.condition-text{
+  color:#6b7280;
+  line-height:1.7;
+}
+
+/* =========================
+   SIGNATURES
+========================= */
+
+.signatures{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:70px;
+}
+
+.signatures td{
+  width:50%;
+  padding-right:40px;
+  vertical-align:top;
+}
+
+.signature-line{
+  border-top:1px solid #9ca3af;
+  padding-top:10px;
+}
+
+.signature-role{
+  color:#9ca3af;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:5px;
+}
+
+  .condition-text{
+  max-width:95%;
+}
+
+.signature-name{
+  margin-top:2px;
+}
+
+.signature-role{
+  margin-bottom:8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  margin-top:40px;
+  padding-top:18px;
+  border-top:1px solid #f3f4f6;
+  color:#9ca3af;
+  font-size:10px;
+}
+  .condition-text{
+  max-width:95%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+
+  <div class="topbar">
+
+    <table class="topbar-table">
+
+      <tr>
+
+        <td class="topbar-left">
+
+          <div class="brand">
+            SIN <span class="brand-accent">MESERO</span>
+          </div>
+
+          <div class="brand-subtitle">
+            Desarrollo de Software
+          </div>
+
+        </td>
+
+        <td class="topbar-right">
+
+          <div class="quote-title">
+            Cotización
+          </div>
+
+          <table class="meta-table">
+
+            <tr>
+              <td class="meta-label">Fecha</td>
+              <td class="meta-value">{% now "d/m/Y" %}</td>
+            </tr>
+
+            <tr>
+              <td class="meta-label">Vigencia</td>
+              <td class="meta-value">
+                {{ contrato.vigencia_dias }} días
+              </td>
+            </tr>
+
+            <tr>
+              <td class="meta-label">Entrega</td>
+              <td class="meta-value">
+                {{ contrato.dias_entrega }} días hábiles
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+  <!-- CLIENTE -->
+
+  <div class="section">
+
+    <div class="section-title">
+      Cliente
+    </div>
+
+    <table class="client-table">
+
+      <tr>
+
+        <td>
+
+          <div class="label">
+            Nombre
+          </div>
+
+          <div class="value">
+            {{ contrato.nombre }}
+          </div>
+
+        </td>
+
+        <td>
+
+          <div class="label">
+            Empresa
+          </div>
+
+          <div class="value">
+            {{ contrato.empresa_cliente|default:"-" }}
+          </div>
+
+        </td>
+
+      </tr>
+
+      <tr>
+
+        <td>
+
+          <div class="label">
+            Correo
+          </div>
+
+          <div class="value">
+            {{ contrato.email_cliente|default:"-" }}
+          </div>
+
+        </td>
+
+        <td>
+
+          <div class="label">
+            Teléfono
+          </div>
+
+          <div class="value">
+            {{ contrato.telefono_cliente|default:"-" }}
+          </div>
+
+        </td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+  <!-- DESCRIPCIÓN -->
+
+  <div class="section">
+
+    <div class="section-title">
+      Descripción
+    </div>
+
+    <div class="paragraph">
+
+      {% if contrato.descripcion %}
+        {{ contrato.descripcion }}
+      {% else %}
+        Desarrollo e implementación de software personalizado
+        adaptado a los requerimientos operativos y técnicos del proyecto.
+      {% endif %}
+
+    </div>
+
+  </div>
+
+  <!-- PRODUCTOS -->
+
+  <div class="section">
+
+    <table class="product-table">
+
+      <thead>
+
+        <tr>
+
+          <th style="width:60%;">
+            Servicio
+          </th>
+
+          <th>
+            Cant.
+          </th>
+
+          <th class="text-right">
+            Precio
+          </th>
+
+          <th class="text-right">
+            Total
+          </th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+
+          <td>
+
+            <div class="product-name">
+              Desarrollo de Software
+            </div>
+
+            <div class="product-description">
+
+              Arquitectura frontend/backend.
+
+            </div>
+
+          </td>
+
+          <td>
+            1
+          </td>
+
+          <td class="text-right">
+            ${{ subtotal }}
+          </td>
+
+          <td class="text-right">
+            ${{ subtotal }}
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <!-- TOTALS -->
+
+    <table class="totals">
+
+      <tr>
+
+        <td class="total-label">
+          Subtotal
+        </td>
+
+        <td class="total-value">
+          ${{ subtotal }}
+        </td>
+
+      </tr>
+
+      <tr>
+
+        <td class="total-label">
+          IVA (16%)
+        </td>
+
+        <td class="total-value">
+          ${{ iva }}
+        </td>
+
+      </tr>
+
+      <tr class="grand-total">
+
+        <td class="total-label">
+          Total
+        </td>
+
+        <td class="total-value">
+          ${{ total_con_iva }}
+        </td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+  <!-- CONDICIONES -->
+
+  <div class="conditions">
+
+    <table class="conditions-table">
+
+      <tr>
+
+        <td>
+
+          <div class="condition-title">
+            Forma de pago
+          </div>
+
+          <div class="condition-text">
+            50% anticipo y 50% contra entrega.
+          </div>
+
+        </td>
+
+        <td>
+
+          <div class="condition-title">
+            Garantía
+          </div>
+
+          <div class="condition-text">
+            {{ contrato.meses_garantia }} meses sobre errores
+            atribuibles al desarrollo entregado.
+          </div>
+
+        </td>
+
+      </tr>
+
+      <tr>
+
+        <td>
+
+          <div class="condition-title">
+            Infraestructura y servicios externos
+          </div>
+
+          <div class="condition-text">
+
+            No se incluye infraestructura cloud,
+            licencias de terceros, dominios,
+            servicios externos o costos mensuales
+            recurrentes salvo especificación expresa.
+
+          </div>
+
+        </td>
+
+        <td>
+
+          <div class="condition-title">
+            Cambios adicionales
+          </div>
+
+          <div class="condition-text">
+
+            Funcionalidades o modificaciones
+            fuera del requerimiento inicial
+            serán cotizadas por separado.
+
+          </div>
+
+        </td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+  <!-- FIRMAS -->
+
+  <table class="signatures">
+
+    <tr>
+
+      <td>
+
+        <div style="
+          font-size:42px;
+          color:#ff6b00;
+          font-style:italic;
+          margin-bottom:6px;
+          line-height:1;
+          transform:rotate(-4deg);
+        ">
+          J~
+        </div>
+
+        <div class="signature-line">
+
+          <div class="signature-role">
+            CTO · SIN MESERO S.A.S.
+          </div>
+
+          <div class="signature-name">
+            Jesús Alberto Ibarra
+          </div>
+
+        </div>
+
+      </td>
+
+      <td>
+
+        <div class="signature-line">
+
+          <div class="signature-role">
+            Cliente
+          </div>
+
+          <div class="signature-name">
+            {{ contrato.nombre }}
+          </div>
+
+        </div>
+
+      </td>
+
+    </tr>
+
+  </table>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+
+    SIN MESERO S.A.S. ·
+    Ludwig Van Beethoven ·
+    Guadalajara, Jalisco ·
+    ufkwear@gmail.com
+
+  </div>
+
+</div>
+
+</body>
+</html>
